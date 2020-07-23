@@ -378,6 +378,11 @@ dockeer ps
 docker-compose -f docker-compse.yml down
 
 
+Dcoker swarm is clusteign machine 
+which contains manager node and worker node 
+
+docker swarm init
+
 
 
 
