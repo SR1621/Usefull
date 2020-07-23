@@ -1,0 +1,167 @@
+@SpringBootApplication--main class 
+@RunWith(SpringRunner.class)
+@SpringBootTest
+
+@RestController
+@GetMapping(path = "/hello-world")
+@GetMapping(path = "/hello-world/path-variable/{name}")
+	public HelloWorldBean helloWorldPathVariable(@PathVariable String name) {
+		return new HelloWorldBean(String.format("Hello World, %s", name)); ---%s replaces name
+	}
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class UserNotFoundException extends RuntimeException {
+@Component
+************
+ResponseEntityExceptionHandler ----need to write exception handler 
+@ControllerAdvice
+
+ResponseEntity 
+
+
+	@Size(min=2, message="Name should have atleast 2 characters")
+	private String name;
+
+	@Past
+	private Date birthDate;
+	
+Valdaiton for parameters 	
+	@Override
+	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
+			HttpHeaders headers, HttpStatus status, WebRequest request) {
+		ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), "Validation Failed",
+				ex.getBindingResult().toString());
+		return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
+	}
+
+@Bean
+	public LocaleResolver localeResolver() {
+		AcceptHeaderLocaleResolver localeResolver = new AcceptHeaderLocaleResolver();
+		localeResolver.setDefaultLocale(Locale.US);
+		return localeResolver;
+	}
+	
+	Controllerr 
+		@GetMapping(path = "/hello-world-internationalized")
+	public String helloWorldInternationalized() {
+		return messageSource.getMessage("good.morning.message", null, 
+									LocaleContextHolder.getLocale());
+	}
+
+	
+	convert from json to xml 
+	
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+
+
+http://localhost:8080/swagger-ui.html
+
+http://localhost:8080/v2/api-docs
+
+
+Acutator 
+
+
+Latest 
+
+@Entity is a JPA annotation to make this object ready for storage in a JPA-based data store.
+There are multiple repository implementations besides JPA. You can use Spring Data MongoDB, Spring Data GemFire, Spring Data Cassandra, etc. For this tutorial, we’ll stick with JPA.
+
+@SpringBootApplication is a meta-annotation that pulls in component scanning, autoconfiguration, and property support.
+@RestController indicates that the data returned by each method will be written straight into the response body instead of rendering a template.
+@ControllerAdvice
+class EmployeeNotFoundAdvice {
+
+  @ResponseBody
+  @ExceptionHandler(EmployeeNotFoundException.class)
+  @ResponseStatus(HttpStatus.NOT_FOUND)
+  String employeeNotFoundHandler(EmployeeNotFoundException ex) {
+    return ex.getMessage();
+  }
+
+@ExceptionHandler configures the advice to only respond if an EmployeeNotFoundException is thrown.
+
+
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-hateoas</artifactId>
+</dependency>
+
+it generates the link in response 
+{
+    "id": 1,
+    "name": "LRK",
+    "role": "burglar",
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/employees/1"
+        },
+        "employees": {
+            "href": "http://localhost:8080/employees"
+        }
+    }
+}
+
+The return type of the method has changed from Employee to EntityModel<Employee>. EntityModel<T> is a generic container from Spring HATEOAS that includes not only the data but a collection of links.
+
+
+CollectionModel<> is another Spring HATEOAS container aimed at encapsulating collections. It, too, also lets you include links. Don’t let that first statement slip by. What does "encapsulating collections" mean? Collections of employees?
+
+
+This simple interface has one method: toModel(). It is based on converting a non-model object (Employee) into a model-based object (EntityModel<Employee>).
+
+All the code you saw earlier in the controller can be moved into this class. And by applying Spring Framework’s @Component, this component will be automatically created when the app starts.
+
+
+************************
+spring container 
+Microservices
+small autonomous applicatin which can be deployoed indepedntly 
+it's light weight mechanism
+which exposed by rest 
+small well chosen deployable units 
+cloud enabled
+
+set of smaller microservices 
+
+Micorserices1--A1,A2
+micrservices--ba1234
+microservices-c1
+
+Challanges 
+Bounder Context ---
+4 or 5 microservices 
+deciding  the boundaries
+**********
+Configuration Management 
+multiple instance 
+***********
+Dynamic configruation managment system 
+*************
+visibility
+********
+Pack of CARDs
+*********
+
+Sping cloud 
+Netflix (Eurekat,Hystrix,zuual)
+Spring cloud config 
+
+*************
+
+SpnfingCloudonfguuration --microserices 
+
+********
+Dynamic scal up and scale down 
+
+Naming sever 
+*************
+Eureka 
+Ribbon Cient Side Load Balancing 
+Feign 
+
+
+
+ 
