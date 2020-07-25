@@ -475,6 +475,93 @@ Control manager talks to api servers and check the etcd cluster store (DB)
 Kube-Proxy 
 is responsible for network route to the container external world .it creats the ip address for the container kube proxy will communicat4es with weave network 
 
+container ==pod
+
+a container run always in pod 
+
+we can run two containers in same pod ,same netowrk ,storage
+
+*************
+docker run -d -p image1
+
+kubectl run mypod --image=nginx
+
+kubetcl get pods 
+
+kubectl get pods -o wide(it gives wider output)
+
+kubectl describe pod podname 
+kubectl is sending the ccommand to 
+APISERVER-->Scheduded --?
+APISERVER -->Kublet>>is pulling image --Create The container
+
+kubectl get pods 
+
+
+kubectrl expose pod mypod --name mysvc --port 80 --type NodePort
+
+kubetcl get service
+
+
+kubectl delete pd mypod 
+
+
+*********
+
+kubectl run mypod --image=nginx --dry-run=client -o yaml
+
+it generates yaml filel using dry run 
+they will look only 4 key workds 
+
+kind:
+apiVersion:
+metadata:
+spec: 
+
+
+kind:
+its just the value like Pod,Service,
+apiVersion:
+it depend on the value of Kind 
+kubectl explain pod 
+
+Kind : Pod
+Version :v1 
+metadata:
+  name   : naresh
+  labels:
+    skill1: trainer
+skill2: sysadmiin 
+  namespace: dev
+
+spec: 
+  containers:  
+  -name: cont1
+image:nginx 
+ports: 
+ -containerrPort : 80 
+
+
+kubectrl api-resources it list all kind values  like Pod,service .,,secret,etc
+
+kubectl explain pod 
+
+Kind : Pod
+Version :v1 
+
+spec: 
+
+
+kubectl create -f pod.yml 
+
+
+kubectl get pods -n dev 
+
+*************
+service 
+ 
+ 
+
 
 
 
