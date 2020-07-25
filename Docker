@@ -384,6 +384,99 @@ which contains manager node and worker node
 docker swarm init
 
 
+kubeadm  version -o short
+
+
+kubelet --version 
+
+18.5 version 
+kubetctl version --short --client 
+
+MAster is called control Plane 
+
+6443 is default port number 
+
+hostname -
+
+overlay is the defualt networn in network swarm which is been taken care by docker swarm
+
+Network is taken care in docker but not in kubernates 
+
+network kubernates 
+flannel 
+calico 
+weave 
+containrer network solutions 
+**********
+kubetcl get pods --all-namespaces
+**********
+Kubernates architecutre 
+Master Node    ---- workder noderr 
+
+
+
+kubectl get pods --all-namespaces 
+
+
+Cluseter/Home 
+room1 room2 room3 
+
+room1 and room2 are living independntly ,,,we can't see of other room 
+every room is called a namespace 
+it allows the resoruces to give speicif resources to seperate namespace .
+
+kubetcl get  namespace 
+
+kubectl create namepsace qa
+
+kubectl create namepsace prod
+
+kubecl get pods -n dev(name space name)
+
+
+master node 
+******
+API Server 
+etcd cluster store 
+schedular 
+controller managger
+master components 
+
+
+node componensts 
+
+kublet 
+docker --container runtime 
+kube-rpxy 
+
+
+kubetcl get nodes it always goes to API Server which runs on 6443 
+
+API server takes the request and send the response ---it doen't store any data 
+***********
+ETCD (cluseter store ) every information is stored in the etcd cluster store 
+the container details is stored in ETCD (cluster store ) 
+****************
+
+kubetcl create nginx creating container 
+API server which gives command to schedular and check all nodes and creaes a contaner 
+---
+Scheduler identified the nodes availability  and sends to API servers 
+API Servers sends the command kublet and kublet creatss a docker 
+
+kublet is an agent which commincates with API Server and creates a container and sends back to API serves and api servers sends to data to ETCD cluster data store 
+
+
+Control manager is responsible for maintaining desired state (auto healing feature )if any servers goes the control manager need to maintain the desired state and create a new one 
+
+Control manager talks to api servers and check the etcd cluster store (DB) 
+
+***********
+Kube-Proxy 
+is responsible for network route to the container external world .it creats the ip address for the container kube proxy will communicat4es with weave network 
+
+
+
 
 
 
