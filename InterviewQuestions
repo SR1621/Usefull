@@ -1058,3 +1058,243 @@ Based on the active profile, appropriate
 configuration is picked up.
 Used to Configure Resources - Databases, Queues,
 External Services
+
+
+*******************************
+
+JDBC - Update Todo
+Connection connection = datasource.getConnection();
+PreparedStatement st = connection.prepareStatement(
+"Update todo set user=?, desc=?, target_date=?, is_done=? where id=?"
+st.setString(1, todo.getUser());
+st.setString(2, todo.getDesc());
+st.setTimestamp(3, new Timestamp(todo.getTargetDate().getTime()));
+st.setBoolean(4, todo.isDone());
+st.setInt(5, todo.getId());
+st.execute();
+st.close();
+connection.close();
+
+
+jdbcTemplate
+.update
+("Update todo set user=?, desc=?, target_date=?, is_done=? where id=?"
+todo.getUser(), todo.getDesc(),
+new Timestamp(todo.getTargetDate().getTime()),
+todo.isDone(), todo.getId());
+jdbcTemplate.update("delete from todo where id=?",
+id);
+
+
+
+new BeanPropertyRowMapper(Todo.class)
+class TodoMapper implements RowMapper<Todo> {
+@Override
+public Todo mapRow(ResultSet rs, int rowNum)
+throws SQLException {
+Todo todo = new Todo();
+todo.setId(rs.getInt("id"));
+todo.setUser(rs.getString("user"));
+todo.setDesc(rs.getString("desc"));
+todo.setTargetDate(
+rs.getTimestamp("target_date"));
+todo.setDone(rs.getBoolean("is_done"));
+return todo;
+}
+}
+
+return jdbcTemplate.query(
+"SELECT * FROM TODO where user = ?",
+new Object[] { user }, new TodoMapper());
+return jdbcTemplate.queryForObject(
+"SELECT * FROM TODO where id=?",
+new Object[] { id }, new TodoMapper())
+
+
+
+@Entity
+@Table(name = "Todo")
+public class Todo {
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private int id;
+private String user;
+private String desc;
+private Date targetDate;
+private boolean isDone;
+
+
+public class TodoJPAService implements TodoDataService {
+@PersistenceContext
+private EntityManager entityManager;
+@Override
+public void updateTodo(Todo todo) {
+entityManager.merge(todo);
+}
+
+@Entity
+public class Passport {
+....
+// Inverse Relationship
+// bi-directional OneToOne relationship
+// Column will not be created in the table
+// Try removing mappedBy = "passport" => You will see that student_// will be created in passport
+@OneToOne(fetch = FetchType.LAZY, mappedBy = "passport")
+private Student student;
+@Entity
+@Table(name = "Student")
+public class Student {
+@OneToOne
+private Passport passport;
+
+
+
+@Entity
+public class Project {
+@OneToMany(mappedBy = "project")
+private List<Task> tasks;
+@Entity
+public class Task {
+@ManyToOne
+@JoinColumn(name="PROJECT_ID")
+private Project project;
+
+
+
+@Entity
+public class Project {
+@ManyToMany
+// @JoinTable(name="STUDENT_PROJ",
+// joinColumns=@JoinColumn(name="STUDENT_ID"),
+// inverseJoinColumns=@JoinColumn(name="PROJECT_ID"))
+private List<Student> students;
+public class Student {
+@ManyToMany(mappedBy = "students")
+private List<Project> projects;
+
+
+
+@Service
+public class StudentService {
+@Autowired
+StudentRepository service;
+@Transactional
+public Student insertStudent(Student student) {
+return service.insertStudent(student);
+}
+@Service
+@Transactional
+public class StudentService {
+@Autowired
+StudentRepository service;
+
+
+Duplication in JPA Repositories
+Passport Repository
+@PersistenceContext
+private EntityManager entityManager;
+public Passport getPassport(final long id) {
+Passport passport = entityManager
+.find(Passport.class, id);
+return passport;
+}
+public Passport createPassport(Passport passport) {
+return entityManager.merge(passport);
+}
+Duplication in JPA Repositories
+Student Repository
+@PersistenceContext
+private EntityManager entityManager;
+public Student retrieveStudent(final long id) {
+return entityManager.find(Student.class, id);
+}
+public Student createStudent(Student student) {
+return entityManager.merge(student);
+}
+
+
+Spring Data
+Common Abstractions to store and
+retrieve data from data stores
+Independent of type of data store
+
+Using Spring Data JPA
+public interface StudentRepository extends CrudRepository<Student
+}
+public interface PassportRepository extends CrudRepository<Passport
+}
+
+
+Questions
+What is a CrudRepository?
+public interface CrudRepository<T, ID> extends Repository<T, ID>
+<S extends T> S save(S entity);
+Optional<T> findById(ID id);
+boolean existsById(ID id);
+Iterable<T> findAll();
+void deleteById(ID id);
+long count();
+//Other Methods
+}
+What is a PagingAndSortingRepository
+
+public interface PagingAndSortingRepository<T, ID>
+extends CrudRepository<T, ID> {
+Iterable<T> findAll(Sort sort);
+Page<T> findAll(Pageable pageable);
+}
+Sort sort = new Sort(Sort.Direction.DESC,"field_name");
+passportRepository.findAll(sort);
+//Page Size - 10
+PageRequest pageable = new PageRequest(0,10);
+Page<Passport> page = passportRepository.findAll(pageable);
+System.out.println(userPage.getTotalPages());
+System.out.println(userPage.nextPageable());
+
+
+Mocktito 
+
+public class SomeBusinessImpl {
+private DataService dataService;
+//Constructor - public SomeBusinessImpl(DataService dataService)
+int findTheGreatestFromAllData() {
+int[] data = dataService.retrieveAllData();
+int greatest = Integer.MIN_VALUE;
+for (int value : data) {
+if (value > greatest) {
+greatest = value;
+}
+}
+return greatest;
+}
+}
+
+
+@Test
+public void testFindTheGreatestFromAllData() {
+DataService dataServiceMock = mock(DataService.class);
+when(dataServiceMock.retrieveAllData())
+.thenReturn(new int[] { 24, 15, 3 });
+SomeBusinessImpl businessImpl =
+new SomeBusinessImpl(dataServiceMock);
+int result = businessImpl.findTheGreatestFromAllData();
+assertEquals(24, result);
+}
+
+
+@RunWith(MockitoJUnitRunner.class)
+public class SomeBusinessMockAnnotationsTest {
+@Mock
+DataService dataServiceMock;
+@InjectMocks //by usign injectmocks there is no need to pass any impl class 
+SomeBusinessImpl businessImpl;
+@Test
+public void testFindTheGreatestFromAllData() {
+when(dataServiceMock.retrieveAllData())
+.thenReturn(new int[] { 24, 15, 3 });
+assertEquals(24, businessImpl.findTheGreatestFromAllData());
+}
+
+
+
+
