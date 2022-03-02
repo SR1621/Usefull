@@ -1,0 +1,76 @@
+1)EBS --is used for sotrage and it is good when the EC2 is shutdown but still the data is available in EBS 
+false --
+2)Stopping the the ece server not charging in billing 
+3)We can set the false ,it will terminate the EC2 Instance
+
+EBS to stop deletion --we can click make the deletion on termination as false 
+
+spot instance and demand instance 
+on demand cost is more compared to spot instance 
+
+Vertical(Single server and same machineand increare more more memory and VMS ) and horgointal scaling ( Two machines and increase the resouce)
+
+VPC is the best way of connecting to your cloud resouces from your own data center.Once you connect your datacenter to the VPIC in which your instacnes are present ,each isntance is assinged a private IP address that can be accessed from your data center
+
+Process state controler 
+P -state  P0 to P15
+C statie --Co to C6
+
+How to transfer an existing domain name registraion to Amazon Route 53 with 
+Route 53's managment console 
+
+Elastic BeansStalk is an easy to use service which is used for deploying and scaling web applicaitons 
+
+AWS Ops works --- integeated with platfomr managment which is used for Devops
+Spring boot reactive Programming 
+Asysnchrons  non blocking 
+Functional style code
+Data flow as event driven system 
+Backpressure on data strean 
+
+Scope of bean 
+IOC 
+core Java Collections 
+
+
+
+Aws Bean stalk will use auto scaling to automatcially launch a new instance 
+
+
+Load Balancgin --Over Flow ,LC(least connections it sends the client to the site which has the lease count of current connections)
+RR(round Robin)
+
+expose reverse proxy cache
+Elastic bean stack 
+
+Define Automate deployment 
+
+Servless Aproach --when the code is in operation (less amount
+)
+Amazon clou dwatch --monitoring the services 
+
+Cloudwatch Logs 
+Reak time montoring 
+
+
+Indiviual IAM 
+
+Lamda time out is 3 seconds defaul 
+We can set up 300 seconds
+
+SQS --Simple Queue Service\
+Route 53 is wathce for DNS Services 
+
+Configuration Managment 
+
+AWS Certifaate manager is used for websites for trustable 
+Disaster Recovery 
+RTO(Recovery  Time Object )/ RPO(Recovery Point Objective) 
+
+AWS Cloud watch & AWS Compute Optimizer
+
+ 
+
+
+
+

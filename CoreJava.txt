@@ -1,0 +1,99 @@
+Lamda expresison syntax () -> {
+}
+anonymous function example 
+lamda expression can be applied functioan interface 
+
+it can contain only abstract method 
+it is called functioan interace 
+Runnable -run 
+callable call 
+comparable -compareTo 
+cpmarator -compare
+@FunciionInterface
+void m1() 
+defaul void m2() 
+() -> { } Syntax method
+****************************
+Consumer ---we don't want to return any thing 
+void accept(T) 
+andThen
+***************
+Preicate 
+Condition statment we can use preidcate 
+boolean Test(T t)
+
+************************* 
+Supplierl interface 
+T get();
+no input and except as return type 
+*********************
+A Stream API is used to process collection of objects
+A Steam is a sequence of objects that supports various methods which can be pipelined to produce the desired result 
+A Steam is not a data structure insted it takes input from the collection,Arays or I/O channels.
+Steams don't change the orginal data strucute ,they only provide the result as per the pipelined methods 
+*************
+We can achieve fucntion programing 
+code reduce 
+Bulk operation 
+
+****************
+Filter for conditon  if and else 
+For each for iteration 
+**************
+
+map() and flatMap()  widely used in Java streams 
+these method are intermediat method and return stream as part of output 
+map() method used for transformation 
+flatMap used for transformation and flattering
+flatMap() -- > Map + Flattering 
+
+******************
+Map() takes stream T as input and reutrn Stream as output 
+One to one mapping 
+
+flatMap() --takes stream as steam as input and returns as stream as output 
+One to Many mapping 
+Stream.of("A","B)
+
+a,b
+flatmap contains stream of sream and provides single output 
+
+************************
+Optional 
+static method are available 
+for ex :empty 
+of
+ofNullable
+static mehthods
+filter
+flatMap
+map
+get
+ifPresent
+isPresent
+orelse
+orelseGet
+orElseThrow
+
+Interface can contain asbstrac methods
+void draw();
+default void area() 
+{
+}
+static methods() 
+}
+default method can be overwriden but static methods can't override in the implemenation classes
+
+******************************
+Map and Reduce 
+Map---Transferring data
+Reduce --to aggregating data 
+
+reduce(T Identiy ,BinaryOperator<T> accumlator)
+
+accumlator is where we are calculating the function 
+
+
+
+
+ 
