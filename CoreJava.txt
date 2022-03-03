@@ -27,6 +27,11 @@ Supplierl interface
 T get();
 no input and except as return type 
 *********************
+function 
+*****************
+apply() //which it takes as input parameter and return as output parameter  
+
+****************************************************************************
 A Stream API is used to process collection of objects
 A Steam is a sequence of objects that supports various methods which can be pipelined to produce the desired result 
 A Steam is not a data structure insted it takes input from the collection,Arays or I/O channels.
@@ -92,6 +97,59 @@ Reduce --to aggregating data
 reduce(T Identiy ,BinaryOperator<T> accumlator)
 
 accumlator is where we are calculating the function 
+
+collection 
+**********
+List 
+******
+ArrayList 
+ListLikedList 
+
+*********set 
+hasset 
+LinkedHashSet
+TreeSet
+**************
+Map 
+HashTable
+
+
+List will allow the duplciate vlaues and set doesn't all duplicate values
+List work on index base and set on Hash Code 
+ArrayList is backed by an Array while HashSet is backed by an HashMap
+
+ArrayList and LinkedList 
+
+ArrayList internally uses a dynamic array to store the elemetns  --LinkedList uses a doubly linked list to store the elemetns 
+
+Manipulation the allarylist is slow  --manipulation with linkedlist is faster 
+
+ArrayList is better for sorting and accesing 
+
+ArrayList arrayList=new ArrayLust<string>();
+List<String> list=mew ArrayList<>(); 
+
+
+CustArrayList extendds ArrayList 
+bolean add (Object 0 )
+{
+if(this.contaions o)
+return true 
+}else return super.add(o)
+
+
+if we are implemention custoobject for set we need to hashcode and equals method 
+if not it allows duplication value but not in the primitie types 
+*********************
+comparable and comparator 
+*********************
+
+comprable --single sorint and comparator --multiple 
+
+compareTo() and compare() 
+java.lang and java.util package 
+
+Hashtable locks whole table ,but when it comes concurrenthashmap it locks only specific field 
 
 
 

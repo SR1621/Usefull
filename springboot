@@ -164,4 +164,18 @@ Feign
 
 
 
+Scope of the bean 
+singleton for each applicaiton 
+
+@Component
+@Scope("Prottype") --for each request ne bean is created 
+
+Request 
+Session 
+Global Session 
+Applicaiton Scope 
+ 
+
+
+
  
