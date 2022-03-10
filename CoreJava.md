@@ -151,7 +151,36 @@ java.lang and java.util package
 
 Hashtable locks whole table ,but when it comes concurrenthashmap it locks only specific field 
 
+    public static List<Customer> getAll() {
+        return Stream.of(
+                new Customer(101, "john", "john@gmail.com", Arrays.asList("397937955", "21654725")),
+                new Customer(102, "smith", "smith@gmail.com", Arrays.asList("89563865", "2487238947")),
+                new Customer(103, "peter", "peter@gmail.com", Arrays.asList("38946328654", "3286487236")),
+                new Customer(104, "kely", "kely@gmail.com", Arrays.asList("389246829364", "948609467"))
+        ).collect(Collectors.toList());
+    }
 
+ List<String> emails = customers.stream()
+                .map(customer -> customer.getEmail())
+                .collect(Collectors.toList());
+        System.out.println(emails);
+
+Exa :Flat Map
+     List<String> phones = customers.stream()
+                .flatMap(customer -> customer.getPhoneNumbers().stream())
+                .collect(Collectors.toList());
+        System.out.println(phones);
+		
+****************
+reduce  --aggreagading data 
+    Integer maxvalue = numbers.stream().reduce(0, (a, b) -> a > b ? a : b);
+        System.out.println(maxvalue);
+		
+		  double sumSalary = EmployeeDatabase.getEmployees().stream()
+                .filter(employee -> employee.getGrade().equalsIgnoreCase("A"))
+                .map(employee -> employee.getSalary())
+                .mapToDouble(i -> i)
+                .sum();
 
 
 

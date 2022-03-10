@@ -1,3 +1,15 @@
+Spring vs spring boot --2.1.3  
+1)Depedency resolution 
+2)Minimul configuraiton 
+3)Embeded tomcat server for testing 
+4)Bean auto scan 
+5)Health Metrics 
+@Spring bootapplication ==@Configuration + @EnableAutoconfiguation + @ComponentScan
+Creat a applicaiton contenxt 
+check applicaiton type  --servlet and reactive 
+Registe the annotate class beans with tthe context class (like AnnotationConfigeApplicationContext) 
+create an instance of tomcateEmebeddedServletContainer adds the contexta 
+===
 @SpringBootApplication--main class 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -174,6 +186,26 @@ Request
 Session 
 Global Session 
 Applicaiton Scope 
+ 
+ @RestControllver vs controller 
+ In rest contlooer we have response body automatically ,if cotnroller we need to mention explictily 
+ 
+ @PathVariable
+ @GetMapping("/foo/{id}") 
+ public string getFoodById(@PathVariable String id )
+ 
+ @RequestParam 
+ 
+ after quesion parameter 
+ /foo?12
+ public string getFoodById(@RequestParam String id )
+ 
+ Desing patters 
+ Service Discovery Pattern  (Ribbon Load balancer )
+ 
+ Saga Desing pattern 
+ 1) Chorecgraphy (Event based)
+ 2) Orchestration (Command Based)ESB
  
 
 
