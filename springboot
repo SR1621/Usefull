@@ -207,6 +207,45 @@ Applicaiton Scope
  1) Chorecgraphy (Event based)
  2) Orchestration (Command Based)ESB
  
+ 
+ 
+ Anonations 
+ 
+ @enableAutoconfiguration --pom.xml --h2 database it automatcialy configures bean  
+@SpringBootApplicaiton 
+@ComponetScan --- scan our bean 
+@AutoConfigruation--java based configuration --IOC can load the classes 
+
+SteroType annotation 
+@component ---  just a main class 
+@ Service --derived from the componet
+@RestController/@Controller --derived from the component
+@Repository  --dervied from the componet
+
+
+Spring core related annotation 
+
+@Confgiruation  --When we want to use java based configuration 
+@Bean  --creating manually the bean 
+@Autowired --need to create the object of the class 
+@Qualfiier --need to inform which bean need to load it using the interface
+@Primary  --need to mention the implmantation class as a priority ,so that the implenation class will be loaded
+@Lazy --- need to define at calss ,the object is create dwhen we call the mehod 
+@Value ---- @value({"mail.from"} private String from; 
+@PropertySource ("classpath:custom.properties")--it define the propertie file name ile 
+@ConfiguraitonProperties---need to bind to the class DTO Object
+@ConfigurtationProperties(prefix ="mail")
+@data
+@Component
+class Name 
+@Profile
+@Scope
+
+
+
+two database need to connect 
+@EnableJPARepostories(entityManagerFactoryRef=
+"entityManagerFactory" ,basePaclages={ "com.javatechie.mutlple.db.api.user.repository"}}
 
 
 
