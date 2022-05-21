@@ -69,6 +69,14 @@ RTO(Recovery  Time Object )/ RPO(Recovery Point Objective)
 
 AWS Cloud watch & AWS Compute Optimizer
 
+yum install java-1.8jdk 
+java -version 
+alternatives --config java 
+select number option1 and option2 
+
+wget download jar file from ect instance 
+java -jar filename.jar 
+
  
 
 

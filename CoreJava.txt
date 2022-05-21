@@ -1,14 +1,18 @@
 Lamda expresison syntax () -> {
 }
+--anonmonmyouse function which doenst not have any name and method is called anonymous function.
 anonymous function example 
 lamda expression can be applied functioan interface 
+The lamda expression is been called for functiona interface 
 
 it can contain only abstract method 
 it is called functioan interace 
+multiple default and static methods is called functional interface 
 Runnable -run 
 callable call 
 comparable -compareTo 
 cpmarator -compare
+We can write lamda expression only functiona itnerface 
 @FunciionInterface
 void m1() 
 defaul void m2() 

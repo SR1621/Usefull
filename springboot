@@ -210,9 +210,8 @@ Applicaiton Scope
  
  
  Anonations 
- 
- @enableAutoconfiguration --pom.xml --h2 database it automatcialy configures bean  
-@SpringBootApplicaiton 
+ @Springbootapplicaiton 
+@enableAutoconfiguration --pom.xml --h2 database it automatcialy configures bean 
 @ComponetScan --- scan our bean 
 @AutoConfigruation--java based configuration --IOC can load the classes 
 
@@ -233,13 +232,26 @@ Spring core related annotation
 @Lazy --- need to define at calss ,the object is create dwhen we call the mehod 
 @Value ---- @value({"mail.from"} private String from; 
 @PropertySource ("classpath:custom.properties")--it define the propertie file name ile 
-@ConfiguraitonProperties---need to bind to the class DTO Object
+@ConfiguraitonProperties---need to bind to the class DTO Object we can use my mentioning key and from we can acces the mail.name,mail.portno,mail.from
 @ConfigurtationProperties(prefix ="mail")
 @data
-@Component
+@Component---sterotype 
 class Name 
-@Profile
-@Scope
+@Profile ---defined the properties file by passsing stage,prod
+@Scope --define the bean object creation for ex :singleton,prototype,request,sesssion 
+
+@RestController
+@RequestMapping --is old method where we define method="post" ,produces and consumes as application/type as "josn",is replicable of get/post and put/delete
+@GetMapping 
+@PostMapping
+@PutMapping
+@DeleteMapping
+@RequestBody 
+@PathVariable 
+@RequestParam
+@ControllerAvice
+@ExceptionHandler 
+
 
 
 
