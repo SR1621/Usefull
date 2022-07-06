@@ -1,3 +1,4 @@
+July6
 Lamda expresison syntax () -> {
 }
 --anonmonmyouse function which doenst not have any name and method is called anonymous function.
