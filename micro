@@ -1,4 +1,50 @@
+12C factor 
+Coding --we need to maintain the single code base for all environmetns 
+Depdency --we need to add all depedncies by using maven or graddle all librariies ,instead of manual libarries adding 
+Config --need to maitain prooper config files for each enviroment based on DEV,Staging,Production.
+Backend Services --Need to create rest api or webservice api 
+Build,Release,Run--Need to buil,release and run for deployment 
+Process --need to maintain persistent database for storing the data 
+Port Binding --we need to maintain proper port bindings in 
+Concurrency --we need to maintain proper cluster environment for deployment purpose 
+Dispoability --we should able to undeploy the application with out effectign other application 
+Dev/Prod --we should maintaing the environment consitent for all version and environmetns
+Logs--Need to have centralized log to view and debug the code 
+Adming process --we should maintaing some process for ex :we need to run sql script then deploy the application.
+
 ************
+Spring boot Best Practises for developers 
+*****************************************
+1)Proper Package strucute ,we may provide proper component scan if we are not maintaing proper structure 
+2) Use spring boot starters 
+3)Use Proper depdencies of the versions 
+4)Use Lambok
+5)Use controllser for logic 
+6)Use Service for business logic 
+7)Use constructor ingejection using Lambok 
+8)Use SLFG logging 
+9)Use Meaningfull words for classes,methods and variables 
+10)Bean Validaton 
+11) Custome exception Hanlding 
+12)Use Custom Response Object 
+13)Use  Design Patterns (Single ton desting,Builder ,DTO ,Hystrix,Resilce4j,SAGA (Orchestration and chroegrapy),CQRS )
+14) Use YML instead of properties 
+15)Encrpty the senstive infomration in properties file store in vault,secret manager 
+16)Write E2E test code coverage test cases 
+17)Avoid NPE using Optional 
+18)Use Best Practises for collection frame work 
+19)Use Caching 
+20) Use Pagination 
+21)Remove uncessary codes function,methods and variables 
+22)Using comments 
+23) Use a common code formatting style 
+24)Use a Sonar Lint 
+
+*******************************
+CQRS --command query responsibiloty segeration pattern 
+
+
+***********************************
 Important topics 
 Using -Dspring.profiles.active=prod in VM Arguments
 Ctrl 1 
