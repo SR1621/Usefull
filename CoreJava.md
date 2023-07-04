@@ -185,4 +185,12 @@ reduce  --aggreagading data
 
 
 
+ Java 17 
+ indent --moving the space of a string 
+ transform --new string builder 
+ SWITCH Expression 
+ text 
+ instanceOf
+ Records
+ Sealed Classes
  

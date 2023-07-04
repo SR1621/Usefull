@@ -14,7 +14,7 @@ Eurekat server --zoo kepper
 
 FinClient --interface 
 
-AWS --Relation Database System
+AWS---Relation Database System
 
 RDS --DNS system name which will take primary and secondary data base 
 
@@ -30,11 +30,11 @@ read database to other database  --asyncrhosue databse to other database replica
 Interprocess communication 
 
 
-ActiveMQ/RabbitMQ (Broker 
+ActiveMQ/RabbitMQ (Broker) 
 Kafka (own broker )
 reply-to-headere :quename
 Akka (Actor based) 
-Lagon (akka based ) --> 
+Lagon (akka based ) 
 Spring-even -sourcing --
 
 Transaction --Saga Pattern and distribtued pattern 
@@ -494,6 +494,9 @@ Main Class
 
 Monolith Model
 deploy in single war file 
+
+
+44
 
 Microservces divide applicaiton into small models mini nature applications 
 
