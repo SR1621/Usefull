@@ -1,5 +1,56 @@
+String is immutable 
+sringuffer is mutable and synchrozation 
+stringbuild is not not synchrozation 
+final is keywork 
+finally is finally execution of the code 
+Finalzie is to clear up the resource before garbase collector 
+
+P1 obj=new P1() //it will shore in heap
+stack is used by only  1 thread 
+
+Arraylis is not syncrhosxed but vector is synchroied 
+
+Arraylis is fast as compared to vector 
+it increase the array size by 50% Vector define the incremetn size 
+Array list use the iterator for traversing an array list 
+***********
+Hasmpa is not synschronzed where hashtable is syncronized 
+Hashmap allows only null key and multiple null values 
+hashtable doesn't allow any null key or value 
+hashmap is fast as compared to hashtable 
+
+equals and == Operator 
+equals need to compare the values  and == is for numbers 
+
 Lamda expresison syntax () -> {
 }
+
+Abstract vs interfaces 
+*******************
+Run time polymorshim -when we oover ride from the mail class is called run time polymorphism 
+we can create  a abstract class and abstrac method and it can be overwridden in mail class 
+we can create an interface and method and this can be implemeted from sub class and need to run by sub class method 
+Abastract class will create an object but not interface
+abstract class are faster not from interfaces 
+*******************
+overloaded method is compile time and override is runtime 
+overload example 
+int add(int a,int b)
+double add(double a,double b)
+we can't override static or private method in a class
+static method of parent class will hiding in sub class -hiding concept  
+multiple inheartance is not supported in java 
+Cohesion is used to create a seperate class for each interface and can be invoked by different method 
+encapsulation is hiding the implemnetation details 
+
+set doesn;t allow dupllcaiton 
+list allows duplication 
+list add the specififc position or delete 
+Queue order of processing 
+map having key and vlaue 
+
+
+
 anonymous function example 
 lamda expression can be applied functioan interface 
 
@@ -185,4 +236,12 @@ reduce  --aggreagading data
 
 
 
+ Java 17 
+ indent --moving the space of a string 
+ transform --new string builder 
+ SWITCH Expression 
+ text 
+ instanceOf
+ Records
+ Sealed Classes
  

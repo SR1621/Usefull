@@ -412,9 +412,6 @@ kubetcl get pods --all-namespaces
 **********
 Kubernates architecutre 
 Master Node    ---- workder noderr 
-
-
-
 kubectl get pods --all-namespaces 
 
 
@@ -426,20 +423,17 @@ every room is called a namespace
 it allows the resoruces to give speicif resources to seperate namespace .
 
 kubetcl get  namespace 
-
 kubectl create namepsace qa
-
 kubectl create namepsace prod
-
 kubecl get pods -n dev(name space name)
 
 
-master node 
-******
-API Server 
-etcd cluster store 
+Master Node 
+***********
+API  Server 
+etcd cluster  store 
 schedular 
-controller managger
+controller manager
 master components 
 
 
@@ -456,11 +450,11 @@ API server takes the request and send the response ---it doen't store any data
 ***********
 ETCD (cluseter store ) every information is stored in the etcd cluster store 
 the container details is stored in ETCD (cluster store ) 
-****************
+**********************************************************************************
 
 kubetcl create nginx creating container 
 API server which gives command to schedular and check all nodes and creaes a contaner 
----
+-------------------------------------------------------------------------------------
 Scheduler identified the nodes availability  and sends to API servers 
 API Servers sends the command kublet and kublet creatss a docker 
 
